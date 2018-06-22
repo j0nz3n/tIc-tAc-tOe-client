@@ -2,18 +2,59 @@
 <html>
 
 <head>
-    <title>tIc - tAc - tOe</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>tIc - tAc - tOe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Do not add `link` tags-->
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-    <!-- Do not add `script` tags-->
-    <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-    <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
 </head>
 
 <body>
+  <nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+      <ul>
+
+        <li>
+          <form id="sign-up" class="border">
+            <legend>Sign up</legend>
+            <input type="text" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="password" name="credentials[password_confirmation]" placeholder="Confrim Password">
+            <input type="submit" value="Sign up!">
+          </form>
+        </li>
+
+        <li>
+          <form id="sign-in" class="border">
+            <legend>Sign in</legend>
+            <input type="text" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="submit" value="Sign in!">
+          </form>
+        </li>
+
+        <li>
+          <form id="change-password" class="border">
+            <legend>Change Password</legend>
+            <input type="password" name="passwords[old]" placeholder="Old Password">
+            <input type="password" name="passwords[new]" placeholder="New Password">
+            <input type="submit" value="Change Password">
+          </form>
+        </li>
+
+        <li>
+          <form id="sign-out" class="border">
+            <legend>Change Password</legend>
+            <input type="submit" value="Sign Out">
+          </form>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
 </body>
 

@@ -1,6 +1,6 @@
 # tIc - tAc - tOe
 
-## At a high level, here are our goals for this project:
+## At a high level, here are the goals for this project:
 
 -   **Build a web application from scratch**, without a starter codebase
 -   Using the programming skills learned so far, map out the game logic for **Tic Tac Toe**
