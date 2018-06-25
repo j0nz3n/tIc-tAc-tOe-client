@@ -3,6 +3,7 @@
 const getFormFields = require('../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
+const game = require('./gameLogic')
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -25,7 +26,6 @@ const onSignIn = function (event) {
 }
 
 const onChangePassword = function (event) {
-  debugger
   event.preventDefault()
   console.log('Change Password ran!')
 
@@ -39,10 +39,13 @@ const onSignOut = function (event) {
   event.preventDefault()
   console.log('Sign put ran!')
 
-  const data = getFormFields(this) // this === event.target 
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
+}
+
+const clickHandler = function (event) {
+  game.clickEvent(event)
 }
 
 const addHandlers = () => {
@@ -50,6 +53,7 @@ const addHandlers = () => {
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
+  $('.row').click(clickHandler)
 }
 
 module.exports = {
