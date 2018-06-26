@@ -1,18 +1,19 @@
 'use strict'
 
-// funtion that takes a gridContainer and userClick
-// a gridContainer is the tic-tac-toe board
+/* 
+Tic - Tac - Toe Game Logic
+*/
 
 const token = ['X', 'O']
 let gameOver = false
 let turn = true // true = X | false = O
-let xMoves = [] // array to hold player moves
-let oMoves = [] // will be used to check for win
 let thisWasClicked
+let xMoves = [] // arrays to hold player moves
+let oMoves = [] // will be used to check for win
 
-// Handles the clicked div and calls move according to who's
-// turn it is
-const clickEvent = function (event) {
+// Handles the clicked div and calls move 
+// according to who'sturn it is
+const clickEvent = function (event) { 
   thisWasClicked = event.target.id
   console.log("This Was Clicked: ", thisWasClicked)
   turn ? xTurn(thisWasClicked) : oTurn(thisWasClicked)
@@ -26,7 +27,7 @@ const xTurn = function (thisWasClicked) {
   if (xMoves.length >= 3) {
     checkForWin(xMoves)
   } else {
-    turn ? turn = false : turn = true
+    turn ? turn = !turn : turn = !turn
     thisWasClicked = ''
   }
   return turn
@@ -62,6 +63,7 @@ const checkForWin = function (playerMoves) {
         console.log("Winner!")
         turn ? alert("X Wins!") : alert('O Wins')
         gameOver = true
+        return gameOver
       }
   })
     console.log("Player has done: ", playerMoves, turn)
