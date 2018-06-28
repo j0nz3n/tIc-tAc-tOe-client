@@ -1,0 +1,24 @@
+.unclickable {
+  pointer-events: none;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  background-color: black;
+  /* padding: 10px; */
+  height: 400px;
+}
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 30px;
+  text-align: center;
+
+}
+.onLoadH1{
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 15vw;
+  /* padding: 15px; */
+  text-align: center;
+}
