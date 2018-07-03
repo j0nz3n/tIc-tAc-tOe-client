@@ -3,7 +3,7 @@
 const getFormFields = require('../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
-const game = require('../scripts/gameLogic')
+const game = require('../game/gameLogic')
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -44,7 +44,7 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 
-const clickHandler = function (event) { // Handles Game events
+const clickHandler = function (event) { // Handles Game events // should be somewhere else
   game.clickEvent(event)
 }
 
