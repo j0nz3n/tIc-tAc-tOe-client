@@ -3,7 +3,7 @@
 const getFormFields = require('../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
-const game = require('../game/gameLogic')
+
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -53,7 +53,7 @@ const addHandlers = () => {
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
-  $('.row').click(clickHandler) // Handles Game events
+  
 }
 
 module.exports = {

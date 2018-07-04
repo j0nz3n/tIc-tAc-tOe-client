@@ -1,5 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Cabin+Sketch");
 
+* {
+  box-sizing: border-box;
+}
+
+div button {
+  background: #333;
+  border-radius: 8px;
+  color: white;
+  padding: 5px 20px;
+  margin-left: 40%;
+}
+
 .unclickable {
   pointer-events: none;
 }
@@ -13,25 +25,25 @@
   font-family: 'Cabin Sketch', cursive;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr; 
-  grid-gap: 5px;
-  height: 515px;
-  margin: 0 auto;
+  grid-gap: 10px;
+  height: 75vh;
+  margin: 20px auto;
   max-width: 500px;
   text-align: center;
   vertical-align: middle;
-  
 }
 
 .grid-container > div {
   font-size: 10vw;
   line-height: 150px;
-  max-height: 150px;
+  max-height: auto;
   text-align: center;
   vertical-align: center;
-
 }
+
 .onLoadH1{
   font-family: 'Cabin Sketch', cursive;
   font-size: 12vw;
   text-align: center;
 }
+

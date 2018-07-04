@@ -19,11 +19,24 @@ const clickEvent = function (event) {
   turn ? xTurn(thisWasClicked) : oTurn(thisWasClicked)
 }
 
+const resetGame = () => {
+  // console.log(thisWasClicked)
+  if ($('.row').hasClass('unclickable')) {
+    // console.log($('.row'))
+    $('.row').removeClass('unclickable')
+  }
+  $('.row').empty()
+  xMoves = []
+  oMoves= []
+  turn = true
+  gameOver = false
+}
+
 const xTurn = function (thisWasClicked) {
   xMoves.push(thisWasClicked)
   let thingClicked = document.getElementById(thisWasClicked)
   thingClicked.innerHTML = token[0]
-  $(thingClicked).addClass('unclickable')
+  $(thingClicked).toggleClass('unclickable')
   checkForWin(xMoves)
   turn ? turn = !turn : turn = !turn
   thisWasClicked = ''
@@ -33,7 +46,7 @@ const oTurn = function (thisWasClicked) {
   oMoves.push(thisWasClicked)
   let thingClicked = document.getElementById(thisWasClicked)
   thingClicked.innerHTML = token[1]
-  $(thingClicked).addClass('unclickable')
+  $(thingClicked).toggleClass('unclickable')
   checkForWin(oMoves)
   turn ? turn = false : turn = true
   thisWasClicked = ''
@@ -62,16 +75,15 @@ const checkForWin = function (playerMoves) {
   if(didWin === true) {
     gameOver = true
     turn ? alert('X WINS!') : alert('O WINS!')
+    setTimeout(resetGame, 1000)
   }
-
-  console.log("Player has done: ", playerMoves, turn)
+  // console.log("Player has done: ", playerMoves, turn)
   thisWasClicked = ''
   return turn, gameOver
 }
-const ttt = function () {
 
-}
 
 module.exports = {
-  clickEvent
+  clickEvent,
+  resetGame
 }
