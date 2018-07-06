@@ -20,3 +20,26 @@ curl "https://tic-tac-toe-wdi.herokuapp.com/games?over=true" \
   --header "Authorization: Token token=${TOKEN}"
 
 echo
+
+
+# Returns 
+# {"games":[
+#   {"id":9215,
+#     "cells": ["","","x","","","","","",""],
+#     "over":true,
+#     "player_x":{
+#       "id":466,
+#       "email": "jon@email.com"},
+#       "player_o":null
+#   },
+#   {
+#     "id":9170,
+#     "cells":["x","x","x","o","","o","","",""],
+#     "over":true,
+#     "player_x": {
+#       "id":466,
+#       "email": "jon@email.com"
+#       },
+#       "player_o":null
+#   }
+# ]}

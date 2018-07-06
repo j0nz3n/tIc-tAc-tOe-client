@@ -21,3 +21,16 @@ curl "https://tic-tac-toe-wdi.herokuapp.com/games" \
   # --data ''
 
 echo
+
+# Returns
+# {"game":{
+#     "id":9283,
+#     "cells":["","","","","","","","",""],
+#     "over":false,
+#     "player_x":{
+#       "id":466,
+#       "email":"jon@email.com"
+#     },
+#     "player_o":null
+#     }
+# }
