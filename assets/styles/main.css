@@ -1,49 +1,78 @@
 @import url("https://fonts.googleapis.com/css?family=Cabin+Sketch");
+@import 'modal.css';
 
 * {
   box-sizing: border-box;
+  font-family: 'Cabin Sketch', cursive;
 }
 
-div button {
-  background: #333;
+nav {
+  /* display: flex; */
+  width: 100vw;
+  height: 50vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.onLoadH1 {
+  font-size: 12vw;
+  text-align: center;
+  padding: 0;
+}
+
+.authBtns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  margin: 0 10px;
+  font-size: 2.5vw;
+}
+
+.reset {
   border-radius: 8px;
+  background: #333;
+  padding: 1em 2em;
+  margin-left: 20%;
   color: white;
-  padding: 5px 20px;
-  margin-left: 40%;
+  border: 0;
+  filter: drop-shadow(-.5mm .5mm .5mm rgba(0, 0, 0, 0.5));
 }
 
 .unclickable {
   pointer-events: none;
 }
 
-.grid-container {
+
+.grid-wrapper {
+  /* margin-top: 10vh; */
+  max-height: auto;
+  max-width: auto;
   background-image: url('../img/ttt.png');
   background-position: center;
   background-repeat: no-repeat;
-  background-size: auto;
-  display: grid;
-  font-family: 'Cabin Sketch', cursive;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr; 
+  background-size: contain;
+}
+
+.grid-container {
+  /* background-image: url('../img/ttt.png'); */
+  /* background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain; */
+  display: none;
+  grid-template-columns: repeat(3, .5fr);
+  grid-template-rows: repeat(3, .5fr);
   grid-gap: 10px;
-  height: 75vh;
-  margin: 20px auto;
-  max-width: 500px;
+  height: 45vh;
+  margin: 0 auto;
+  max-width: 25vw;
   text-align: center;
   vertical-align: middle;
 }
 
-.grid-container > div {
-  font-size: 10vw;
-  line-height: 150px;
-  max-height: auto;
+.grid-container>div {
+  font-size: 10vh;
+  /* line-height: 150px; */
+  /* max-height: auto;
   text-align: center;
-  vertical-align: center;
+  vertical-align: center; */
 }
-
-.onLoadH1{
-  font-family: 'Cabin Sketch', cursive;
-  font-size: 12vw;
-  text-align: center;
-}
-

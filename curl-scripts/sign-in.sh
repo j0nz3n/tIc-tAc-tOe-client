@@ -1,9 +1,17 @@
-# sh curl-scripts/json/sign-in.sh
+# sh curl-scripts/sign-in.sh
 
-curl "http://tic-tac-toe.wdibos.com" \
+EMAIL="jon@email.com" 
+PASSWORD="12"
+
+curl "https://tic-tac-toe-wdi.herokuapp.com/sign-in" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \
-  --data ''
+  --data '{
+    "credentials": {
+      "email":"'"${EMAIL}"'",
+      "password":"'"${PASSWORD}"'"
+    }
+  }'
 
 echo
