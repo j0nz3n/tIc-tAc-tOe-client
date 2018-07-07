@@ -26,7 +26,7 @@ const updateGame = (data) =>  {
 
 const getOneGame = (data) =>  {
   return $.ajax({
-    url: config.apiUrl + '/games' + store.user.gameHistory.id,
+    url: config.apiUrl + '/games' + store.user.games.id,
     method: 'GET',
     header: {
       Authorization: 'Token token=' + store.user.token,
@@ -35,9 +35,19 @@ const getOneGame = (data) =>  {
   })
 }
 
+const getAllGames = () =>  {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'GET',
+    header: {
+      Authorization: 'Token token=' + store.user.token     
+    }
+  })
+}
+
 module.exports = {
   newGame,
   updateGame,
   getOneGame,
-  getAllGame
+  getAllGames
 }
