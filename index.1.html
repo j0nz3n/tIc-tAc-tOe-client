@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>tIc - tAc - tOe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="./assets/styles/main.css">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <nav>
+    <div class="onLoadH1">tIc - tAc - tOe</div>
+    <div class="authBtns">
+      <button id="signInBtn" class="button sign-up-btn">Sign in</button>
+
+      <div id="signInModal" class="modal signInModal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span id="closeSignInBtn">&times;</span>
+            <h2>Sign In</h2>
+          </div>
+          <div class="modal-body">
+            <form id="sign-in-form" class="border">
+              <input type="text" name="credentials[email]" placeholder="Email">
+              <br>
+              <input type="password" name="credentials[password]" placeholder="Password">
+              <footer class="modal-footer">
+                <input type="submit" value="Sign in">
+              </footer>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <button id="signUpBtn" class="button sign-in-btn">Sign Up</button>
+
+      <div id="signUpModal" class="modal signUpModal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span id="closeSignUpBtn">&times;</span>
+            <h2>Sign Up</h2>
+          </div>
+          <div class="modal-body">
+            <form id="sign-up-form" class="border">
+              <input type="text" name="credentials[email]" placeholder="Email">
+              <br>
+              <input type="password" name="credentials[password]" placeholder="Password">
+              <input type="password" name="credentials[password_confirmation]" placeholder="Confrim Password">
+              <footer class="modal-footer">
+                <input type="submit" value="Sign Up">
+              </footer>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class='grid-wrapper'>
+    <!-- <button class="reset">Reset Game</button> -->
+  <div class="grid-container">
+    <div class="row" id="one"></div>
+    <div class="row" id="two"></div>
+    <div class="row" id="three"></div>
+    <div class="row" id="four"></div>
+    <div class="row" id="five"></div>
+    <div class="row" id="six"></div>
+    <div class="row" id="seven"></div>
+    <div class="row" id="eight"></div>
+    <div class="row" id="nine"></div>
+  </div>
+  </div>
+</body>
+
+</html>
