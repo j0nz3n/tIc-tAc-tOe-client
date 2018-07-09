@@ -2,7 +2,7 @@
 
 let apiUrl
 const apiUrls = {
-  production: '<replace-with-heroku-url>',
+  production: ' ',
   development: 'https://tic-tac-toe-wdi.herokuapp.com'
 }
 

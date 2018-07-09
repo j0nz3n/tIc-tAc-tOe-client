@@ -3,6 +3,7 @@
 const getFormFields = require('../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
+// const modal = require('./modal')
 
 
 const onSignUp = function (event) {
@@ -23,6 +24,7 @@ const onSignIn = function (event) {
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
+  
 }
 
 const onChangePassword = function (event) {
@@ -30,6 +32,7 @@ const onChangePassword = function (event) {
   console.log('Change Password ran!')
 
   const data = getFormFields(this) // this === event.target 
+  console.log(data)
   api.changePassword(data)
     .then(ui.changePasswordSuccess)
     .catch(ui.changePasswordFailure)
@@ -44,16 +47,11 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 
-const clickHandler = function (event) { // Handles Game events // should be somewhere else
-  game.clickEvent(event)
-}
-
 const addHandlers = () => {
-  $('#sign-up').on('submit', onSignUp)
-  $('#sign-in').on('submit', onSignIn)
+  $('#sign-up-form').on('submit', onSignUp)
+  $('#sign-in-form').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
-  $('#sign-out').on('submit', onSignOut)
-  
+  $('#sign-out-form').on('submit', onSignOut)
 }
 
 module.exports = {

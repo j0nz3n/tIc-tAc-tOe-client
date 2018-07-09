@@ -1,49 +1,50 @@
 @import url("https://fonts.googleapis.com/css?family=Cabin+Sketch");
+/* @import 'modal.css'; */
 
 * {
   box-sizing: border-box;
-}
-
-div button {
-  background: #333;
-  border-radius: 8px;
-  color: white;
-  padding: 5px 20px;
-  margin-left: 40%;
+  font-family: 'Cabin Sketch', cursive;
 }
 
 .unclickable {
   pointer-events: none;
 }
 
-.grid-container {
-  background-image: url('../img/ttt.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: auto;
+body {
   display: grid;
-  font-family: 'Cabin Sketch', cursive;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr; 
-  grid-gap: 10px;
-  height: 75vh;
-  margin: 20px auto;
-  max-width: 500px;
-  text-align: center;
-  vertical-align: middle;
+  grid-template-columns: .5fr 1fr .5fr;
+  grid-template-rows: 1fr 1fr 1fr .5fr;
+  grid-template-areas: 
+  "header header header"
+  "section main aside"
+  "section . aside"
+  "section . aside";
 }
 
-.grid-container > div {
-  font-size: 10vw;
-  line-height: 150px;
-  max-height: auto;
-  text-align: center;
-  vertical-align: center;
+.unclickable {
+  pointer-events: none;
 }
 
-.onLoadH1{
-  font-family: 'Cabin Sketch', cursive;
-  font-size: 12vw;
+header {
+  grid-area: header;
   text-align: center;
 }
 
+header h1 {
+  font-size: 5em;
+}
+
+main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: repeat(3, .75fr);
+  grid-template-rows: repeat(3, .75fr);
+}
+
+section {
+  grid-area: section;
+}
+
+aside {
+  grid-area: aside;
+}

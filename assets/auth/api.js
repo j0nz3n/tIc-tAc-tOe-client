@@ -3,6 +3,7 @@
 const config = require('../scripts/config')
 const store = require('../scripts/store')
 
+
 const signUp = function (data) {
   return $.ajax({
     url: config.apiUrl + '/sign-up',
@@ -37,7 +38,7 @@ const signOut = function () {
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    },
+    }
   })
 }
 
