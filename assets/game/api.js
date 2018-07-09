@@ -7,7 +7,8 @@ const newGame = () =>  {
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'POST',
-    header: {
+    data: {},
+    headers: {
       Authorization: 'Token token=' + store.user.token
     }
   })
@@ -16,8 +17,8 @@ const newGame = () =>  {
 const updateGame = (data) =>  {
   return $.ajax({
     url: config.apiUrl + '/games' + store.game.id,
-    method: 'POST',
-    header: {
+    method: 'PATCH',
+    headers: {
       Authorization: 'Token token=' + store.user.token,
       data
     }
@@ -28,7 +29,7 @@ const getOneGame = (data) =>  {
   return $.ajax({
     url: config.apiUrl + '/games' + store.user.games.id,
     method: 'GET',
-    header: {
+    headers: {
       Authorization: 'Token token=' + store.user.token,
       data
     }
@@ -39,7 +40,7 @@ const getAllGames = () =>  {
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'GET',
-    header: {
+    headers: {
       Authorization: 'Token token=' + store.user.token     
     }
   })

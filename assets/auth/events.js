@@ -32,6 +32,7 @@ const onChangePassword = function (event) {
   console.log('Change Password ran!')
 
   const data = getFormFields(this) // this === event.target 
+  console.log(data)
   api.changePassword(data)
     .then(ui.changePasswordSuccess)
     .catch(ui.changePasswordFailure)

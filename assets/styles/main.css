@@ -1,78 +1,50 @@
 @import url("https://fonts.googleapis.com/css?family=Cabin+Sketch");
-@import 'modal.css';
+/* @import 'modal.css'; */
 
 * {
   box-sizing: border-box;
   font-family: 'Cabin Sketch', cursive;
 }
 
-nav {
-  /* display: flex; */
-  width: 100vw;
-  height: 50vh;
-  position: relative;
-  overflow: hidden;
+.unclickable {
+  pointer-events: none;
 }
 
-.onLoadH1 {
-  font-size: 12vw;
-  text-align: center;
-  padding: 0;
-}
-
-.authBtns {
+body {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
-  margin: 0 10px;
-  font-size: 2.5vw;
-}
-
-.reset {
-  border-radius: 8px;
-  background: #333;
-  padding: 1em 2em;
-  margin-left: 20%;
-  color: white;
-  border: 0;
-  filter: drop-shadow(-.5mm .5mm .5mm rgba(0, 0, 0, 0.5));
+  grid-template-columns: .5fr 1fr .5fr;
+  grid-template-rows: 1fr 1fr 1fr .5fr;
+  grid-template-areas: 
+  "header header header"
+  "section main aside"
+  "section . aside"
+  "section . aside";
 }
 
 .unclickable {
   pointer-events: none;
 }
 
-
-.grid-wrapper {
-  /* margin-top: 10vh; */
-  max-height: auto;
-  max-width: auto;
-  background-image: url('../img/ttt.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
+header {
+  grid-area: header;
+  text-align: center;
 }
 
-.grid-container {
-  /* background-image: url('../img/ttt.png'); */
-  /* background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain; */
-  display: none;
-  grid-template-columns: repeat(3, .5fr);
-  grid-template-rows: repeat(3, .5fr);
-  grid-gap: 10px;
-  height: 45vh;
-  margin: 0 auto;
-  max-width: 25vw;
-  text-align: center;
-  vertical-align: middle;
+header h1 {
+  font-size: 5em;
 }
 
-.grid-container>div {
-  font-size: 10vh;
-  /* line-height: 150px; */
-  /* max-height: auto;
-  text-align: center;
-  vertical-align: center; */
+main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: repeat(3, .75fr);
+  grid-template-rows: repeat(3, .75fr);
+}
+
+section {
+  grid-area: section;
+}
+
+aside {
+  grid-area: aside;
 }
