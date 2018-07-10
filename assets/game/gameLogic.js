@@ -8,6 +8,7 @@ const token = ['X', 'O']
 let gameOver = false
 let turn = true // true = X | false = O
 let thisWasClicked
+let cells = []
 let xMoves = [] // arrays to hold player moves
 let oMoves = [] // will be used to check for win
 
@@ -54,14 +55,14 @@ const oTurn = function (thisWasClicked) {
 
 const checkForWin = function (playerMoves) {
   const winScenario = [
-    ["one", "two", "three"],    // top row
-    ["four", "five", "six"],    // middle row
-    ["seven", "eight", "nine"], // bottom row
-    ["one", "four", "seven"],   // left column
-    ["two", "five", "eight"],   // middle column
-    ["three", "six", "nine"],   // right column
-    ["one", "five", "nine"],    // left to right diagnal
-    ["three", "five", "seven"]  // right to left diagnal
+    ["1", "2", "3"],    // top row
+    ["4", "5", "6"],    // middle row
+    ["7", "8", "9"], // bottom row
+    ["1", "4", "7"],   // left column
+    ["2", "5", "8"],   // middle column
+    ["3", "6", "9"],   // right column
+    ["1", "5", "9"],    // left to right diagnal
+    ["3", "5", "7"]  // right to left diagnal
   ]
 
   const scenarioChecks = winScenario.map(scenario => {  // Grab each subArray in winScenario

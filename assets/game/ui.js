@@ -11,7 +11,8 @@ const newGameFailure = (err) => {
 }
 
 const allGamesSuccess = (data) => {
- console.log(data)
+  store.allGames = data.games
+  console.log(store.allGames)
 }
 
 
