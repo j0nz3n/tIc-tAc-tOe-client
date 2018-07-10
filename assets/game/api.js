@@ -14,16 +14,24 @@ const newGame = () =>  {
   })
 }
 
-const updateGame = (data) =>  {
-  return $.ajax({
-    url: config.apiUrl + '/games' + store.game.id,
-    method: 'PATCH',
-    headers: {
-      Authorization: 'Token token=' + store.user.token,
-      data
-    }
-  })
-}
+const updateGame = (index, value, over) =>  {
+    return $.ajax({
+      url: config.apiUrl + '/games/' + store.game.id,
+      method: 'PATCH',
+      data: {
+        "game": {
+          "cell": {
+            "index": `${index}`,
+            "value": `${value}`,
+            "over":  `${over}`
+          }
+        }
+      },
+      headers: {
+        Authorization: 'Token token=' + store.user.token
+      }
+    })
+  }
 
 const getOneGame = (data) =>  {
   return $.ajax({

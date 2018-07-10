@@ -4,19 +4,23 @@
 Tic - Tac - Toe Game Logic
 */
 
-const token = ['X', 'O']
+const gameAPI = require('./api')
+const store = require('../scripts/store')
+const tokens = ['X', 'O']
 let gameOver = false
 let turn = true // true = X | false = O
 let thisWasClicked
-let xMoves = [] // arrays to hold player moves
-let oMoves = [] // will be used to check for win
+let cell = []
+let xMoves = []
+let oMoves = []
+// let thisGame = store.game.id
 
 // Handles the clicked div and calls move
 // according to who'sturn it is
 const clickEvent = function (event) {
   thisWasClicked = event.target.id
-  console.log("This Was Clicked: ", thisWasClicked)
-  turn ? xTurn(thisWasClicked) : oTurn(thisWasClicked)
+  console.log("This Was Clicked: ", thisWasClicked, gameOver)
+  turn ? playerMove(thisWasClicked, tokens[0]) : playerMove(thisWasClicked, tokens[1])
 }
 
 const resetGame = () => {
@@ -32,36 +36,30 @@ const resetGame = () => {
   gameOver = false
 }
 
-const xTurn = function (thisWasClicked) {
-  xMoves.push(thisWasClicked)
-  let thingClicked = document.getElementById(thisWasClicked)
-  thingClicked.innerHTML = token[0]
-  $(thingClicked).toggleClass('unclickable')
-  checkForWin(xMoves)
+const playerMove = (target, token) => {
+  turn ? xMoves.push(target) : oMoves.push(target)
+  let thingclicked = document.getElementById(target)
+  let index = thingclicked.dataset.index
+  let value = token
+  thingclicked.innerHTML = token
+  $(thingclicked).toggleClass('unclickable')
+  turn ? checkForWin(xMoves) : checkForWin(oMoves)
   turn ? turn = !turn : turn = !turn
-  thisWasClicked = ''
-}
+  target = ''
+  gameOver ? gameAPI.updateGame(index, value, true) && resetGame() : gameAPI.updateGame(index, value, false) 
 
-const oTurn = function (thisWasClicked) {
-  oMoves.push(thisWasClicked)
-  let thingClicked = document.getElementById(thisWasClicked)
-  thingClicked.innerHTML = token[1]
-  $(thingClicked).toggleClass('unclickable')
-  checkForWin(oMoves)
-  turn ? turn = false : turn = true
-  thisWasClicked = ''
 }
 
 const checkForWin = function (playerMoves) {
   const winScenario = [
-    ["one", "two", "three"],    // top row
-    ["four", "five", "six"],    // middle row
-    ["seven", "eight", "nine"], // bottom row
-    ["one", "four", "seven"],   // left column
-    ["two", "five", "eight"],   // middle column
-    ["three", "six", "nine"],   // right column
-    ["one", "five", "nine"],    // left to right diagnal
-    ["three", "five", "seven"]  // right to left diagnal
+    ["1", "2", "3"],    // top row
+    ["4", "5", "6"],    // middle row
+    ["7", "8", "9"], // bottom row
+    ["1", "4", "7"],   // left column
+    ["2", "5", "8"],   // middle column
+    ["3", "6", "9"],   // right column
+    ["1", "5", "9"],    // left to right diagnal
+    ["3", "5", "7"]  // right to left diagnal
   ]
 
   const scenarioChecks = winScenario.map(scenario => {  // Grab each subArray in winScenario
@@ -75,11 +73,15 @@ const checkForWin = function (playerMoves) {
   if(didWin === true) {
     gameOver = true
     turn ? alert('X WINS!') : alert('O WINS!')
-    setTimeout(resetGame, 1000)
+    // setTimeout(resetGame, 1000)
+  } 
+  else if (xMoves.length + oMoves.length === 9 && !gameOver){
+    alert("Draw")
+    gameOver = true
   }
   // console.log("Player has done: ", playerMoves, turn)
   thisWasClicked = ''
-  return turn, gameOver
+  return gameOver
 }
 
 

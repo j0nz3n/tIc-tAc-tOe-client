@@ -17,9 +17,8 @@ const signUpFailure = function (error) {
 const signInSuccess = function (data) {
   $('#message').text('Signed in successfully')
   $('#message').css('background-color', 'green')
-  console.log('signInSuccess ran. Token is:' + data.user.token)
+  // console.log('signInSuccess ran. Token is:' + data.user.token)
   store.user = data.user
-  // $('.grid-container').css('display', 'grid')
 }
 
 const signInFailure = function (error) {

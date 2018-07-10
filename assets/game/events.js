@@ -2,19 +2,15 @@
 const gameLogic = require('./gameLogic')
 const gameAPI = require('./api')
 const ui = require('./ui')
+const store = require('../scripts/store')
 
 const clickHandler = function (event) { // Handles Game events // should be somewhere else
   gameLogic.clickEvent(event)
 }
 
-const reset_Game = function () {
-  gameLogic.resetGame()
-}
-
 const new_game = function (event) {
   event.preventDefault()
   console.log('New game ran!')
-
   // const data = 
   gameAPI.newGame(event)
     .then(ui.newGameSuccess)
@@ -33,7 +29,6 @@ const all_games = function (event) {
 
 const addHandlers = () => {
   $('.row').click(clickHandler) // Handles Game events
-  $('.reset').click(reset_Game)
   $('.newGame').click(new_game)
   $('.allGames').click(all_games)
 }

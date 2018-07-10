@@ -13,11 +13,11 @@
 body {
   display: grid;
   grid-template-columns: .5fr 1fr .5fr;
-  grid-template-rows: 1fr 1fr 1fr .5fr;
+  grid-template-rows: .8fr 1fr 1fr .5fr;
   grid-template-areas: 
   "header header header"
   "section main aside"
-  "section . aside"
+  "section main aside"
   "section . aside";
 }
 
@@ -25,20 +25,38 @@ body {
   pointer-events: none;
 }
 
+.hidden {
+  display: none;
+}
+
 header {
   grid-area: header;
+  display: flex;
+  justify-content: center;
   text-align: center;
 }
 
 header h1 {
-  font-size: 5em;
+  font-size: 10em;
 }
 
-main {
+.main {
   grid-area: main;
-  display: grid;
-  grid-template-columns: repeat(3, .75fr);
-  grid-template-rows: repeat(3, .75fr);
+  display: none;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 8px;
+  background-image: url('../img/ttt.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.main > div {
+  font-size: 10vw;
+  text-align: center;
+  vertical-align: center;
+
 }
 
 section {
