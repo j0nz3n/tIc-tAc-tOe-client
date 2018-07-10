@@ -2,7 +2,7 @@
 
 let apiUrl
 const apiUrls = {
-  production: ' ',
+  production: 'https://j0nz3n.github.io/tIc-tAc-tOe-client ',
   development: 'https://tic-tac-toe-wdi.herokuapp.com'
 }
 
