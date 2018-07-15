@@ -1,11 +1,12 @@
 'use strict'
 
 const store = require('../scripts/store')
-
+const modal = require('../auth/modal')
 const signUpSuccess = function (data) {
   $('#message').text('Signed up successfully')
   $('#message').css('background-color', 'green')
-  console.log('signUpSuccess ran. Data is:', data)
+  modal.closeSigUpModal()
+  modal.openSignInModal()
 }
 
 const signUpFailure = function (error) {
@@ -19,6 +20,7 @@ const signInSuccess = function (data) {
   $('#message').css('background-color', 'green')
   // console.log('signInSuccess ran. Token is:' + data.user.token)
   store.user = data.user
+  modal.closeSignInModal()
 }
 
 const signInFailure = function (error) {

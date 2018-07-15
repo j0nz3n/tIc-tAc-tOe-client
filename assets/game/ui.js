@@ -27,5 +27,6 @@ const updateGame = (data) => {
 module.exports = {
   newGameSuccess,
   newGameFailure,
-  allGamesSuccess
+  allGamesSuccess,
+  updateGame
 }

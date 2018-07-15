@@ -26,16 +26,24 @@ window.addEventListener('click', clickOutsideSignUp)
 // Functions that open and close modal
 function openSignUpModal () {
   signUpModal.style.display = "block"
+  signUpBtn.style.display = "none"
+  signInBtn.style.display = "none"
 }
 function closeSigUpModal () {
   signUpModal.style.display = "none"
+  signUpBtn.style.display = "block"
+  signInBtn.style.display = "block"
 }
 
 function openSignInModal () {
   signInModal.style.display = "block"
+  signInBtn.style.display = "none"
+  signUpBtn.style.display = "none"
 }
 function closeSignInModal () {
   signInModal.style.display = "none"
+  signInBtn.style.display = "block"
+  signUpBtn.style.display = "block"
 }
 
 
