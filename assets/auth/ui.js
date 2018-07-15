@@ -2,6 +2,7 @@
 
 const store = require('../scripts/store')
 const modal = require('../auth/modal')
+
 const signUpSuccess = function (data) {
   $('#message').text('Signed up successfully')
   $('#message').css('background-color', 'green')
@@ -16,11 +17,13 @@ const signUpFailure = function (error) {
 }
 
 const signInSuccess = function (data) {
-  $('#message').text('Signed in successfully')
-  $('#message').css('background-color', 'green')
   // console.log('signInSuccess ran. Token is:' + data.user.token)
   store.user = data.user
+  let user = store.user.email
   modal.closeSignInModal()
+  $('#message').html('<h3></h3>')
+  $('#message').text('Hello, ' + user)
+  // console.log("Hello, "+ store.user.email)
 }
 
 const signInFailure = function (error) {
