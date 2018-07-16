@@ -1,7 +1,7 @@
   .btn {
-    border-radius: 8px;
+    border-radius: 4px;
     background: #333;
-    padding: 1em 2em;
+    /* padding: 1em 2em; */
     color: white;
     border: 0;
     filter: drop-shadow(-.5mm .5mm .5mm rgba(0, 0, 0, 0.5));
@@ -16,20 +16,20 @@
   .modal {
     display: none;
     grid-area: main;
-    /* position: fixed; */
+    position: fixed;
     z-index: 1;
     left: 0;
     top: 0;
-    /* height: 100%; */
-    /* width: 100%; */
+    /* height: 100%;
+    width: 100%; */
     background-color: rgba(0, 0, 0, 0.5)
   }
 
   .modal-content {
     background-color: #f4f4f4;
-    margin: 20% auto;
+    /* margin: 20% auto; */
     /* sets the distance from the top  */
-    width: 70%;
+    width: 100%;
     filter: drop-shadow(-1mm 1mm .5mm rgba(0, 0, 0, 0.5));
     animation-name: modalOpen;
     animation-duration: 500;
@@ -63,10 +63,10 @@
     border: 0;
   }
 
-  .modal-footer {
+  /* .modal-footer {
     color: white;
     padding: 8px;
-  }
+  } */
 
   #closeSignUpBtn,
   #closeSignInBtn {

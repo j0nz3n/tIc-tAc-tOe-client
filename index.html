@@ -20,21 +20,25 @@
   </header>
 
   <div class="main">
-    <div class="row" id="1" data-index="0"></div>
-    <div class="row" id="2" data-index="1"></div>
-    <div class="row" id="3" data-index="2"></div>
-    <div class="row" id="4" data-index="3"></div>
-    <div class="row" id="5" data-index="4"></div>
-    <div class="row" id="6" data-index="5"></div>
-    <div class="row" id="7" data-index="6"></div>
-    <div class="row" id="8" data-index="7"></div>
-    <div class="row" id="9" data-index="8"></div>
+    <!-- <div class="container game-board"> -->
+      <div class="row" id="1" data-index="0"></div>
+      <div class="row" id="2" data-index="1"></div>
+      <div class="row" id="3" data-index="2"></div>
+      <div class="row" id="4" data-index="3"></div>
+      <div class="row" id="5" data-index="4"></div>
+      <div class="row" id="6" data-index="5"></div>
+      <div class="row" id="7" data-index="6"></div>
+      <div class="row" id="8" data-index="7"></div>
+      <div class="row" id="9" data-index="8"></div>
+    <!-- </div> -->
   </div>
 
+  <!-- Section -->
   <section>
-      <div id="message"></div>
-    <button class="btn newGame">New Game</button>
-    <button class="btn allGames">All Games</button>
+    <div id="message"></div>
+    <button class="btn  hidden game-btn" id="sign-out">Sign Out</button>
+    <button class="btn hidden game-btn newGame">New Game</button>
+    <button class="btn  hidden game-btn allGames">All Games</button>
 
     <div class="modal modal-content">
       <form id="change-password" class="border">
@@ -48,8 +52,8 @@
   </section>
 
 
-  <button class="btn" id="signInBtn">Sign In</button>
-  <button class="btn" id="signUpBtn">Sign Up</button>
+  <button class="btn auth-btn" id="signInBtn">Sign In</button>
+  <button class="btn auth-btn" id="signUpBtn">Sign Up</button>
 
 
   <div class="modal modal-content" id="signInModal">
@@ -62,9 +66,7 @@
         <input type="text" name="credentials[email]" placeholder="Email">
         <br>
         <input type="password" name="credentials[password]" placeholder="Password">
-        <!-- <footer class="modal-footer"> -->
         <input type="submit" class="btn" value="Sign in">
-        <!-- </footer> -->
       </form>
     </div>
   </div>
@@ -80,14 +82,12 @@
         <br>
         <input type="password" name="credentials[password]" placeholder="Password">
         <input type="password" name="credentials[password_confirmation]" placeholder="Confrim Password">
-        <!-- <footer class="modal-footer"> -->
         <input type="submit" class="btn" value="Sign Up">
-        <!-- </footer> -->
       </form>
     </div>
 
     <aside>
-      
+
     </aside>
 
 </body>
