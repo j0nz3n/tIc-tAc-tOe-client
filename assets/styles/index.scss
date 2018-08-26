@@ -1,2 +1,25 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+@import url("https://fonts.googleapis.com/css?family=Cabin+Sketch");
+@import 'modal.scss';
+
+* {
+  box-sizing: border-box;
+  font-family: 'Cabin Sketch', cursive;
+}
+
+.unclickable {
+  pointer-events: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+

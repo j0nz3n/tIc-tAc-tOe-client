@@ -7,7 +7,7 @@
 
   <!-- Do not add `link` tags-->
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="./assets/styles/index.scss">
+  <link rel="stylesheet" href="./assets/styles/main.css">
 
   <!-- Do not add `script` tags-->
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
@@ -15,39 +15,57 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">
-          tIc - tAc - tOe
-        </a>
-      </div>
-      <button type="button" id="show-signUp-btn" class="btn btn-default navbar-btn navbar-right">Sign up</button>
-      <button type="button" id="show-signIn-btn" class="btn btn-default navbar-btn navbar-right">Sign in</button>
-    </div>
-  </nav>
+  <header>
+    <h1>tIc - tAc - tOe</h1>
+  </header>
 
-  <div class="main-container container-fluid">
-    <div class="modal-content modal" id="sigIn-modal">
-        <div id="message"></div>
+  <div class="main">
+    <div class="row" id="1" data-index="0"></div>
+    <div class="row" id="2" data-index="1"></div>
+    <div class="row" id="3" data-index="2"></div>
+    <div class="row" id="4" data-index="3"></div>
+    <div class="row" id="5" data-index="4"></div>
+    <div class="row" id="6" data-index="5"></div>
+    <div class="row" id="7" data-index="6"></div>
+    <div class="row" id="8" data-index="7"></div>
+    <div class="row" id="9" data-index="8"></div>
+  </div>
+
+  <section>
+    <button class="newGame btn">New Game</button>
+    <button class="allGames btn">All Games</button>
+
+    <div class="modal-content">
+      <form id="change-password" class="border">
+        <input type="password" name="passwords[old_password]" placeholder="Current Password">
+        <input type="password" name="passwords[new_confirmation]" placeholder="New Password">
+        <footer class="modal-footer">
+          <input type="submit" value="Change Password">
+        </footer>
+      </form>
+    </div>
+  </section>
+
+  <aside>
+
+    <div class="modal-content">
       <div class="modal-header">
         <span id="closeSignInBtn">&times;</span>
         <h2>Sign In</h2>
       </div>
       <div class="modal-body">
         <form id="sign-in-form" class="border">
-          <input type="text" name="credentials[email]" placeholder="Email" autofocus required>
+          <input type="text" name="credentials[email]" placeholder="Email">
           <br>
-          <input type="password" name="credentials[password]" placeholder="Password" required>
+          <input type="password" name="credentials[password]" placeholder="Password">
           <footer class="modal-footer">
-            <input type="submit" value="Sign In">
+            <input type="submit" value="Sign in">
           </footer>
         </form>
       </div>
-
     </div>
-    <div class="modal-content modal" id="sigUp-modal">
-        <div id="message"></div>
+
+    <div class="modal-content">
       <div class="modal-header">
         <span id="closeSignUpBtn">&times;</span>
         <h2>Sign Up</h2>
@@ -63,6 +81,8 @@
           </footer>
         </form>
       </div>
+  </aside>
+
 </body>
 
 </html>
