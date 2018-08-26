@@ -12,9 +12,14 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   pointer-events: none;
 }
 
+.hidden-btn {
+  display: none;
+}
 .hidden {
   display: none;
 }
+
+
 
 .main-container {
     display: flex;

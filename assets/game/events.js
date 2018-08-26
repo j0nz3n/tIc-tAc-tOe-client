@@ -10,8 +10,8 @@ const clickHandler = function (event) { // Handles Game events // should be some
 
 const new_game = function (event) {
   event.preventDefault()
-  console.log('New game ran!')
-  // const data = 
+  // console.log('New game ran!')
+  
   gameAPI.newGame(event)
     .then(ui.newGameSuccess)
     .catch(ui.newGameFailure)

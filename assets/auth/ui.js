@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('../scripts/store')
+const navBtns = require('../scripts/templates/navbar.handlebars')
 
 const signUpSuccess = function (data) {
   $('#message').text('Signed up successfully')
@@ -25,7 +26,7 @@ const signInSuccess = function (data) {
   $('#message').css('background-color', 'green')
   $('#sigIn-modal').toggle('display')
   // console.log('signInSuccess ran. Token is:' + data.user.token)
-  $('nav button').remove()
+  $('nav button').toggle('display')
   store.user = data.user
 }
 
