@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Cabin+Sketch");
-/* @import 'modal.css'; */
+@import 'modal.css';
 
 * {
   box-sizing: border-box;
