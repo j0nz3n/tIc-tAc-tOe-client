@@ -15,6 +15,7 @@ const newGame = () =>  {
 }
 
 const updateGame = (index, value, over) =>  {
+    console.log(store)
     return $.ajax({
       url: config.apiUrl + '/games/' + store.game.id,
       method: 'PATCH',
@@ -23,8 +24,8 @@ const updateGame = (index, value, over) =>  {
           "cell": {
             "index": `${index}`,
             "value": `${value}`,
-            "over":  `${over}`
-          }
+          },
+          "over":  `${over}`
         }
       },
       headers: {
