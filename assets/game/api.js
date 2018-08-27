@@ -15,7 +15,7 @@ const newGame = () =>  {
 }
 
 const updateGame = (index, value, over) =>  {
-    console.log(store)
+    // console.log(store)
     return $.ajax({
       url: config.apiUrl + '/games/' + store.game.id,
       method: 'PATCH',

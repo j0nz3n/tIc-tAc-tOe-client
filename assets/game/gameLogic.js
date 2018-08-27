@@ -19,7 +19,7 @@ let oMoves = []
 // according to who'sturn it is
 const clickEvent = function (event) {
   thisWasClicked = event.target.id
-  console.log("This Was Clicked: ", thisWasClicked, gameOver)
+  // console.log("This Was Clicked: ", thisWasClicked, gameOver)
   turn ? playerMove(thisWasClicked, tokens[0]) : playerMove(thisWasClicked, tokens[1])
 }
 
@@ -31,7 +31,7 @@ const resetGame = () => {
   }
   $('.row').empty()
   xMoves = []
-  oMoves= []
+  oMoves = []
   turn = true
   gameOver = false
 }
@@ -46,37 +46,46 @@ const playerMove = (target, token) => {
   turn ? checkForWin(xMoves) : checkForWin(oMoves)
   turn ? turn = !turn : turn = !turn
   target = ''
-  gameOver ? gameAPI.updateGame(index, value, true) && resetGame() : gameAPI.updateGame(index, value, false) 
+  gameOver ? gameAPI.updateGame(index, value, true) && resetGame() : gameAPI.updateGame(index, value, false)
 
 }
 
 const checkForWin = function (playerMoves) {
   const winScenario = [
-    ["1", "2", "3"],    // top row
-    ["4", "5", "6"],    // middle row
+    ["1", "2", "3"], // top row
+    ["4", "5", "6"], // middle row
     ["7", "8", "9"], // bottom row
-    ["1", "4", "7"],   // left column
-    ["2", "5", "8"],   // middle column
-    ["3", "6", "9"],   // right column
-    ["1", "5", "9"],    // left to right diagnal
-    ["3", "5", "7"]  // right to left diagnal
+    ["1", "4", "7"], // left column
+    ["2", "5", "8"], // middle column
+    ["3", "6", "9"], // right column
+    ["1", "5", "9"], // left to right diagnal
+    ["3", "5", "7"] // right to left diagnal
   ]
 
-  const scenarioChecks = winScenario.map(scenario => {  // Grab each subArray in winScenario
-    const winningMoves = playerMoves.filter(move => {   // Grab playerMoves and checks if
-      return scenario.indexOf(move) !== -1              // that is a winning
+  const scenarioChecks = winScenario.map(scenario => { // Grab each subArray in winScenario
+    const winningMoves = playerMoves.filter(move => { // Grab playerMoves and checks if
+      return scenario.indexOf(move) !== -1 // that is a winning
     })
     return winningMoves.length === 3
   })
 
   const didWin = scenarioChecks.some(scenarioCheck => scenarioCheck === true)
-  if(didWin === true) {
+  if (didWin === true) {
     gameOver = true
-    turn ? alert('X WINS!') : alert('O WINS!')
-    // setTimeout(resetGame, 1000)
-  } 
-  else if (xMoves.length + oMoves.length === 9 && !gameOver){
-    alert("Draw")
+    turn ? ($('#game-message').text('X WINS!'),
+      setTimeout(() => {
+        $('#game-message').text("")
+      }, 1000)) 
+      : ($('#game-message').text('O WINS!'),
+      setTimeout(() => {
+        $('#game-message').text("")
+      }, 2000))
+
+  } else if (xMoves.length + oMoves.length === 9 && !gameOver) {
+    $('#game-message').text("Draw Game")
+    setTimeout(() => {
+      $('#game-message').text("")
+    }, 2000)
     gameOver = true
   }
   // console.log("Player has done: ", playerMoves, turn)
