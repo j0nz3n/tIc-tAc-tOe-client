@@ -12,16 +12,13 @@
 
 **<u>The current state of this repo:</u>**
 
-- Game is 99% functional: 
-  - Check for a win for with eitherr player and also a draw.
+  - Check for a win for with either player and also a draw.
   - The game board will only appear after a user has signed up for an account and is signed in.
-  - All moves made for that game are passed to the server via --PATCH  
-  - Currently gameLogic does not transmit gameOver status correctly.
-  - All games played by current player can be viewed in the console logs  
+  - All moves made for that game are passed to the server via --PATCH    
 
 
+*<u>Take Away</u>*
 
-**<u>Take Away</u> **
+My biggest takeaway from this project is how crucial time management and breaking down large tasks into easier to manage chunks that can be worked out  in a few minutes. Every time I approached this project it was from a different angle. That lead to frequent errors and undoing what I thought was a good idea. Had I broken down each task into a mini task, I would have met requirements earlier.
 
-My biggest takeaway from this project is how crucial time management and breaking down large tasks into easier to manage chunks that can be worked out  in a few minutes. Every time I approached this project it was from a different angle. That lead to frequent errors and undoing what I thought was a good idea. Had I broken down each task into a mini task, I would have met requirements earlier. None the less I hand in this project *Not finished* (as of writing this) but both proud and eager to finish it on my own time.
-
+I learned a lot about DOM element and jQuery Selectors on elements. In particular: adding eventHandlers to elements before the exist in the DOM is not possible. 
