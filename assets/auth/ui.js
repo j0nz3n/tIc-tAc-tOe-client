@@ -37,7 +37,6 @@ const signInFailure = function (error) {
     $('#message').toggle('display')
     $('#sign-in-form')[0].reset()
   }, 1500)
-  // console.log('signInFailure ran. Data is:', error)
 }
 
 const changePasswordSuccess = function () {

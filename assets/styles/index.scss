@@ -39,3 +39,22 @@ ul {
 }
 
 
+.gameboard {
+  // grid-area: main;
+  display: none;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 8px;
+  background-image: url("../../public/img/ttt.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50vh;
+  width: 50vw;
+}
+
+.gameboard > div {
+  font-size: 10vw;
+  text-align: center;
+  vertical-align: center;
+}
