@@ -15,11 +15,22 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 .hidden-btn {
   display: none;
 }
+
 .hidden {
   display: none;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
 
+
+ul {
+  margin-top: 20px;
+  padding-left: 5px;
+  list-style: none;
+}  
 
 .main-container {
     display: flex;

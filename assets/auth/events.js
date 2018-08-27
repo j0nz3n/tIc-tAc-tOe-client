@@ -7,8 +7,6 @@ const getFormFields = require('../../lib/get-form-fields')
 
 const onSignUp = function (event) {
   event.preventDefault()
-  console.log('Sign up ran!')
-
   const data = getFormFields(this) // this === event.target 
   console.log(data)
   api.signUp(data)
@@ -18,20 +16,19 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) {
   event.preventDefault()
-  // console.log('Sign in ran!')
   const data = getFormFields(this) // this === event.target 
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
+}
+
+const onShowChangePassword = () => {
 
 }
 
 const onChangePassword = function (event) {
   event.preventDefault()
-  // console.log('Change Password ran!')
-
   const data = getFormFields(this) // this === event.target 
-  // console.log(data)
   api.changePassword(data)
     .then(ui.changePasswordSuccess)
     .catch(ui.changePasswordFailure)
@@ -39,8 +36,6 @@ const onChangePassword = function (event) {
 
 const onSignOut = function (event) {
   event.preventDefault()
-  // console.log('Sign put ran!')
-
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
@@ -66,7 +61,10 @@ const addHandlers = () => {
   })
   $('.modal-header span').on('click', () => {
     $('#sigUp-modal').toggle('display')
-})
+  })
+  $('#show-change-pw').on('click', () => {
+    $('#change-pw').toggle('display')
+  })
 }
 
 module.exports = {

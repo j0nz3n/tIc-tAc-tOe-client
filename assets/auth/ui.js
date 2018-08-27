@@ -6,7 +6,6 @@ const navBtns = require('../scripts/templates/navbar.handlebars')
 const signUpSuccess = function (data) {
   $('#message').text('Signed up successfully')
   $('#message').css('background-color', 'green')
-  // console.log('signUpSuccess ran. Data is:', data)
   $('#sigUp-modal').toggle('display')
   $('#sigIn-modal').toggle('display')
 }
@@ -14,19 +13,20 @@ const signUpSuccess = function (data) {
 const signUpFailure = function (error) {
   $('#message').text('Error on sign')
   $('#message').css('background-color', 'red')
-  setTimeout(() => {
-    $('#message').toggle('display')
-    $('#sign-up-form')[0].reset()
-  }, 1500)
-  // console.log('signUpFailure ran. Data is:', error)
+  $('#message').toggle('display')
+  $('#sign-up-form')[0].reset()
+
 }
 
 const signInSuccess = function (data) {
   $('#message').text('Signed in successfully')
   $('#message').css('background-color', 'green')
   $('#sigIn-modal').toggle('display')
-  // console.log('signInSuccess ran. Token is:' + data.user.token)
   $('nav button').toggle('display')
+  $('.hidden').removeClass('hidden')
+  $('#message').toggle('display')
+  $('#sign-in-form')[0].reset()
+
   store.user = data.user
 }
 
@@ -41,14 +41,18 @@ const signInFailure = function (error) {
 }
 
 const changePasswordSuccess = function () {
-  $('#message').text('changed password successfully')
-  $('#message').css('background-color', 'green')
-  console.log('changePasswordSuccess ran and nothing was returned')
+  $('#pw-message').text('changed password successfully')
+  $('#pw-message').css('background-color', 'green')
+  setTimeout(() => {
+    $('#pw-message').toggle('display')
+    $('#change-password')[0].reset()
+    $('#change-pw').toggle('display')
+  }, 1500)
 }
 
 const changePasswordFailure = function (error) {
-  $('#message').text('Error on Password change')
-  $('#message').css('background-color', 'red')
+  $('#pw-message')[2].text('Error on Password change')
+  $('#pw-message')[2].css('background-color', 'red')
   console.log('changePasswordFailure ran. Data is:', error)
 }
 
