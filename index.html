@@ -34,7 +34,7 @@
               <a href="#">Change Password</a>
             </li>
             <li role="separator" class="divider"></li>
-            <li>
+            <li id="sign-out">
               <a href="#">Sign Out</a>
             </li>
           </ul>
@@ -42,10 +42,11 @@
       </ul>
       <button class="newGame hidden-btn btn navbar-btn navbar-right">New Game</button>
       <button class="allGames hidden-btn btn navbar-btn navbar-right">All Games</button>
-    </div>
-  </nav>
+    </div> <!-- End Nav Container Fluid -->
+  </nav> <!-- End Nav -->
 
   <div class="main-container container-fluid">
+    
     <div class="modal-content modal" id="sigIn-modal">
       <div id="message"></div>
       <div class="modal-header">
@@ -62,7 +63,8 @@
           </footer>
         </form>
       </div>
-    </div>
+    </div> <!-- End Sign In Modal -->
+    
     <div class="modal-content modal" id="sigUp-modal">
       <div id="message"></div>
       <div class="modal-header">
@@ -80,9 +82,8 @@
           </footer>
         </form>
       </div>
-    </div>
-
-
+    </div> <!-- End Sign Up Modal -->
+    
     <div class="modal-content modal hidden-btn" id="change-pw">
       <div id="pw-message"></div>
       <div class="modal-header">
@@ -98,7 +99,8 @@
           </footer>
         </form>
       </div>
-    </div>
+    </div> <!-- End Change Password Modal -->
+    
     <div class="gameboard">
       <div class="row" id="1" data-index="0"></div>
       <div class="row" id="2" data-index="1"></div>
@@ -109,8 +111,9 @@
       <div class="row" id="7" data-index="6"></div>
       <div class="row" id="8" data-index="7"></div>
       <div class="row" id="9" data-index="8"></div>
-    </div>
-  </div>
+    </div><!-- End Gameboard -->
+
+  </div><!-- End Main Container Fluid -->
 </body>
 
 </html>

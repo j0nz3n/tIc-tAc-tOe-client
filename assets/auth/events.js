@@ -22,10 +22,6 @@ const onSignIn = function (event) {
     .catch(ui.signInFailure)
 }
 
-const onShowChangePassword = () => {
-
-}
-
 const onChangePassword = function (event) {
   event.preventDefault()
   const data = getFormFields(this) // this === event.target 
@@ -53,7 +49,7 @@ const addHandlers = () => {
   $('#sign-up-form').on('submit', onSignUp)
   $('#sign-in-form').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
-  $('#sign-out-form').on('submit', onSignOut)
+  $('#sign-out').on('click', onSignOut)
   $('#show-signIn-btn').on('click', onShowSignIn)
   $('#show-signUp-btn').on('click', onShowSignUp)
   $('.modal-header span').on('click', () => {

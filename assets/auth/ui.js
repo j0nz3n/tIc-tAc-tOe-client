@@ -26,7 +26,6 @@ const signInSuccess = function (data) {
   $('.hidden').removeClass('hidden')
   $('#message').toggle('display')
   $('#sign-in-form')[0].reset()
-
   store.user = data.user
 }
 
@@ -50,22 +49,25 @@ const changePasswordSuccess = function () {
 }
 
 const changePasswordFailure = function (error) {
-  $('#pw-message')[2].text('Error on Password change')
-  $('#pw-message')[2].css('background-color', 'red')
-  console.log('changePasswordFailure ran. Data is:', error)
+  $('#pw-message').text('Error on Password change')
+  $('#pw-message').css('background-color', 'red')
+  // console.log('changePasswordFailure ran. Data is:', error)
 }
 
 const signOutSuccess = function () {
   $('#message').text('Signed out successfully')
   $('#message').css('background-color', 'green')
-  console.log('signOutSuccess ran and nothing was returned')
+  $('nav button').toggle('display')
+  $('.gameboard').toggle('display')
+  $('#settings').toggle('display')
+  // console.log('signOutSuccess ran and nothing was returned')
   store.user = null
 }
 
 const signOutFailure = function (error) {
   $('#message').text('Error on sign out')
   $('#message').css('background-color', 'red')
-  console.log('signOutFailure ran. Data is:', error)
+  // console.log('signOutFailure ran. Data is:', error)
 }
 
 module.exports = {
