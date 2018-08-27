@@ -19,9 +19,7 @@ const new_game = function (event) {
 
 const all_games = function (event) {
   event.preventDefault()
-  console.log('All Games ran!')
-
-  // const data = 
+  // console.log('All Games ran!')
   gameAPI.getAllGames(event)
     .then(ui.allGamesSuccess)
     .catch(ui.newGameFailure)

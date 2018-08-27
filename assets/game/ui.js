@@ -1,7 +1,6 @@
 'use strict'
 
 const store = require('../scripts/store')
-const game = require('./gameLogic')
 
 const newGameSuccess = (data) => {
   // console.log("The Current Game ID: " + data.game.id)
@@ -9,13 +8,19 @@ const newGameSuccess = (data) => {
   $('.gameboard').css('display', 'grid')
 }
 
-const newGameFailure = (err) => {
-  console.log(err)
+const newGameFailure = () => {
+  $('#game-message').text("Something went wrong, please try again.")
+  setTimeout(()=>{
+    $('#game-message').text("")
+  },2000)
 }
 
 const allGamesSuccess = (data) => {
   store.allGames = data.games
-  console.log(store.allGames)
+  $('#game-message').text(`${store.allGames.length} games have been played on this account`)
+  setTimeout(()=>{
+    $('#game-message').text("")
+  },2000)
 }
 
 
